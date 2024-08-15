@@ -1,0 +1,365 @@
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden; 
+}
+
+h1,
+h3,
+h2 {
+  color: white;
+}
+
+hr {
+  border: none;
+  height: 5px;
+  background-color: #00adb5;
+  margin: 0;
+}
+
+.add-button {
+    height: 60px;
+    width: 150px;
+  border-radius: 20px;
+  padding: 10px 20px; 
+  border: none;
+  color: #00adb5;
+  cursor: pointer;
+  font-size: 1.5rem; 
+  font-weight: bold;
+  background-color: #f1f1f1;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.add-button:hover {
+  background-color: #00adb5; 
+  color: #fff; 
+}
+.inspire {
+  margin-bottom: 10px;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: #f1f1f1;
+  padding: 0 20px;
+}
+
+.logo {
+  max-height: 100px;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+main {
+  flex: 1;
+}
+
+section.welcome {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+  background-color: #393e46;
+}
+
+.welcomeMessage {
+  margin: 30px 150px 30px 80px;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.addBlog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 115px;
+  font-size: 30px;
+}
+
+.blogs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #393e46;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background-color: #f1f1f1;
+  position: relative;
+  margin-top: auto;
+}
+
+.matter {
+  font-weight: bold;
+  color: #00adb5;
+}
+
+.current {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 2.1rem;
+}
+
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.blog-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: left;
+  transition: transform 0.3s ease;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  position: relative; 
+}
+
+.blog-card:hover {
+  transform: scale(1.05);
+}
+
+.blog-card h4 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+.blog-card p {
+  margin: 0 0 15px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.blog-card .author-info {
+  margin-top: auto;
+  font-size: 0.85rem;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-delete-buttons {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.edit-button {
+  background-color: #fd7e14; 
+}
+
+.delete-button {
+  background-color: red;
+}
+
+.topic-label {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  max-width: fit-content;
+  text-align: center;
+}
+
+.topic-technology {
+  background-color: #007bff;
+}
+.topic-lifestyle {
+  background-color: #e83e8c;
+}
+.topic-health {
+  background-color: #28a745;
+}
+.topic-education {
+  background-color: #ffc107;
+}
+.topic-travel {
+  background-color: #17a2b8;
+}
+.topic-business {
+  background-color: #6f42c1;
+}
+.topic-sports {
+  background-color: #fd7e14;
+}
+
+section.add-blog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #393e46;
+    min-height: 80vh; /* Ensure it covers most of the page */
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #00adb5; /* Matching the theme color */
+  }
+  
+  .blog-form {
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .blog-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #393e46;
+  }
+  
+  .blog-form input[type="text"],
+  .blog-form select,
+  .blog-form textarea {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+  }
+  
+  .blog-form input[type="submit"] {
+    height: 60px;
+    width: 150px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: none;
+    color: #00adb5;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #f1f1f1;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .blog-form input[type="submit"]:hover {
+    background-color: #00adb5;
+    color: #fff;
+  }
+
+  .edit-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #393e46;
+    min-height: 100vh;
+  }
+  
+  .edit-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .edit-container h2 {
+    color: #00adb5;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .edit-container label {
+    color: #393e46;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .edit-container input[type="text"],
+  .edit-container textarea,
+  .edit-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+  }
+  
+  .edit-save-button {
+    height: 50px;
+    width: 150px;
+    border-radius: 20px;
+    padding: 0; /* Reset padding to 0 to avoid interfering with centering */
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #00adb5;
+    margin-top: 20px;
+    
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    text-align: center; /* Ensure text is centered */
+  }
+  
+  .edit-save-button:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  
+  
+  

@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+  <section class="edit-section">
+    <div class="edit-container">
+      <h2>Edit Your Blog!</h2>
+      <form action="/save-blog" method="post">
+        <!-- Include the blog index as a hidden input -->
+        <input type="hidden" name="index" value="<%= index %>">
+
+        <!-- Name input -->
+        <label for="name">Author Name:</label><br>
+        <input type="text" id="name" name="name" value="<%= blog.name %>" required><br><br>
+
+        <!-- Blog Title input -->
+        <label for="title">Blog Title:</label><br>
+        <input type="text" id="title" name="title" value="<%= blog.title %>" required ><br><br>
+
+        <!-- Dropdown menu for topic selection -->
+        <label for="topic">Choose a Topic:</label><br>
+        <select id="topic" name="topic" required>
+          <option value="">--Select a Topic--</option>
+          <option value="technology" <%= blog.topic === 'technology' ? 'selected' : '' %>>Technology</option>
+          <option value="lifestyle" <%= blog.topic === 'lifestyle' ? 'selected' : '' %>>Lifestyle</option>
+          <option value="health" <%= blog.topic === 'health' ? 'selected' : '' %>>Health</option>
+          <option value="education" <%= blog.topic === 'education' ? 'selected' : '' %>>Education</option>
+          <option value="travel" <%= blog.topic === 'travel' ? 'selected' : '' %>>Travel</option>
+          <option value="business" <%= blog.topic === 'business' ? 'selected' : '' %>>Business</option>
+          <option value="sports" <%= blog.topic === 'sports' ? 'selected' : '' %>>Sports</option>
+        </select><br><br>
+
+        <!-- Blog Content -->
+        <label for="content">Your Blog Content:</label><br>
+        <textarea id="content" name="content" rows="10" cols="50" required><%= blog.content %></textarea><br><br>
+
+        <input type="submit" value="Save Changes" class="edit-save-button">
+      </form>
+    </div>
+  </section>
+</body>
+
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,62 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+  <section class="welcome">
+    <div class="welcomeMessage">
+      <h1>
+        Welcome to the corner of the web where your words
+        <span class="matter">MATTER! </span> <br />
+        Dive in, share your thoughts, or get lost in someone else's. <br />
+        Your H-blog adventure awaits!
+      </h1>
+    </div>
+    <div class="addBlog">
+      <h3 class="inspire">Inspire Us! 👇</h3>
+      <form action="/submit" method="POST">
+        <button class="add-button">Add Blog</button>
+      </form>
+    </div>
+  </section>
+  <hr />
+  <section class="blogs">
+    <h2 class="current">Current Blogs</h2>
+    <div class="blog-container">
+      <% blogs.forEach(function(blog) { %>
+      <div class="blog-card">
+        <div class="topic-label topic-<%= blog.topic.toLowerCase() %>">
+          <%= blog.topic.charAt(0).toUpperCase() + blog.topic.slice(1) %>
+        </div>
+        <h4><%= blog.title %></h4>
+        <p><%= blog.content %></p>
+        <div class="author-info">
+          <span>by <%= blog.name %></span>
+        </div>
+        <div class="edit-delete-buttons">
+          <!-- Edit Blog Form -->
+          <form action="/edit-blog" method="POST">
+            <input
+              type="hidden"
+              name="index"
+              value="<%= blogs.indexOf(blog) %>"
+            />
+            <button type="submit" class="edit-button">Edit</button>
+          </form>
+
+          <!-- Delete Blog Form -->
+          <form action="/delete-blog" method="POST">
+            <input
+              type="hidden"
+              name="index"
+              value="<%= blogs.indexOf(blog) %>"
+            />
+            <button type="submit" class="delete-button">Delete</button>
+          </form>
+        </div>
+      </div>
+
+      <% }) %>
+    </div>
+  </section>
+</body>
+
+<%- include("partials/footer.ejs") %>
