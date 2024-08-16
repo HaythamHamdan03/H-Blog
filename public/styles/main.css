@@ -362,90 +362,97 @@ section.add-blog-container {
 
 /* Responsive styles (for screens less than 768px wide) */
 @media (max-width: 768px) {
-    .welcomeMessage {
-      margin: 20px 10px;
-      font-size: 1rem; /* Reduce font size */
-      text-align: center;
-    }
-  
-    .addBlog {
-      margin-top: 20px; /* Reduce margin */
-      font-size: 1.3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .add-button {
-      width: 120px;
-      height: 50px;
-      font-size: 1.2rem;
-      margin-right: 0;
-      margin-bottom: 20px;
-    }
-  
     .welcome {
-      grid-template-columns: 1fr; /* Stack welcoming message and Inspire Us vertically */
-      text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
     }
-  
-    .blog-container {
-      grid-template-columns: 1fr;
-      gap: 15px;
-      padding: 10px;
-    }
-  
-    .blog-card {
-      width: 100%;
-      padding: 15px;
-      font-size: 1rem;
-    }
-  
-    .current {
-      font-size: 1.8rem;
-    }
-  }
-  
-  /* Responsive styles (for screens less than 480px wide) */
-  @media (max-width: 480px) {
+
     .welcomeMessage {
-      margin: 10px 5px;
-      font-size: 0.9rem; /* Further reduce font size */
-      text-align: center;
+        margin: 20px 10px;
+        font-size: 1rem; /* Reduce font size */
     }
-  
+
     .addBlog {
-      margin-top: 15px; /* Reduce margin further */
-      font-size: 1.1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+        margin-top: 20px; /* Reduce margin */
+        font-size: 1.3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-  
+
     .add-button {
-      width: 100px;
-      height: 40px;
-      font-size: 1rem;
-      margin-bottom: 15px;
+        width: 120px;
+        height: 50px;
+        font-size: 1rem;
+        margin-right: 0;
+        margin-bottom: 20px;
     }
-  
-    .welcome {
-      grid-template-columns: 1fr; /* Ensure it's stacked vertically */
-      text-align: center;
-    }
-  
+
     .blog-container {
-      padding: 5px;
-      gap: 10px;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
     }
-  
+
     .blog-card {
-      padding: 10px;
-      font-size: 0.9rem;
+        width: 100%;
+        padding: 15px;
+        font-size: 1rem;
     }
-  
+
     .current {
-      font-size: 1.4rem;
+        font-size: 1.8rem;
     }
-  }
+}
+
+/* Responsive styles for screens less than 480px wide */
+@media (max-width: 480px) {
+    .welcome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .welcomeMessage {
+        margin: 10px 5px;
+        font-size: 0.9rem; /* Further reduce font size */
+        text-align: center;
+    }
+
+    .addBlog {
+        margin-top: 15px; /* Reduce margin further */
+        font-size: 1.1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .add-button {
+        width: 100px;
+        height: 40px;
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .blog-container {
+        padding: 5px;
+        gap: 10px;
+    }
+
+    .blog-card {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .current {
+        font-size: 1.4rem;
+    }
+}
   
