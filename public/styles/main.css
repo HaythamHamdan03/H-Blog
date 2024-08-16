@@ -10,7 +10,7 @@ body {
 html,
 body {
   width: 100%;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 h1,
@@ -27,14 +27,14 @@ hr {
 }
 
 .add-button {
-    height: 60px;
-    width: 150px;
+  height: 60px;
+  width: 150px;
   border-radius: 20px;
-  padding: 10px 20px; 
+  padding: 10px 20px;
   border: none;
   color: #00adb5;
   cursor: pointer;
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
   font-weight: bold;
   background-color: #f1f1f1;
   margin-right: 30px;
@@ -42,8 +42,8 @@ hr {
 }
 
 .add-button:hover {
-  background-color: #00adb5; 
-  color: #fff; 
+  background-color: #00adb5;
+  color: #fff;
 }
 .inspire {
   margin-bottom: 10px;
@@ -142,7 +142,7 @@ section.welcome {
   overflow-wrap: break-word;
   hyphens: auto;
   max-width: 100%;
-  position: relative; 
+  position: relative;
 }
 
 .blog-card:hover {
@@ -188,7 +188,7 @@ button {
 }
 
 .edit-button {
-  background-color: #fd7e14; 
+  background-color: #fd7e14;
 }
 
 .delete-button {
@@ -229,137 +229,223 @@ button {
 }
 
 section.add-blog-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: #393e46;
-    min-height: 80vh; /* Ensure it covers most of the page */
-  }
-  
-  .page-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #00adb5; /* Matching the theme color */
-  }
-  
-  .blog-form {
-    background-color: #f9f9f9;
-    border-radius: 15px;
-    padding: 20px;
-    width: 80%;
-    max-width: 500px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  }
-  
-  .blog-form label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #393e46;
-  }
-  
-  .blog-form input[type="text"],
-  .blog-form select,
-  .blog-form textarea {
-    width: calc(100% - 20px); /* Account for padding */
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-family: "Poppins", sans-serif;
-    font-size: 1rem;
-  }
-  
-  .blog-form input[type="submit"] {
-    height: 60px;
-    width: 150px;
-    border-radius: 20px;
-    padding: 10px 20px;
-    border: none;
-    color: #00adb5;
-    cursor: pointer;
-    font-size: 1.5rem;
-    font-weight: bold;
-    background-color: #f1f1f1;
-    margin-right: 30px;
-    margin-bottom: 30px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .blog-form input[type="submit"]:hover {
-    background-color: #00adb5;
-    color: #fff;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #393e46;
+  min-height: 80vh; /* Ensure it covers most of the page */
+}
 
-  .edit-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: #393e46;
-    min-height: 100vh;
+.page-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00adb5; /* Matching the theme color */
+}
+
+.blog-form {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.blog-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #393e46;
+}
+
+.blog-form input[type="text"],
+.blog-form select,
+.blog-form textarea {
+  width: calc(100% - 20px); /* Account for padding */
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+.blog-form input[type="submit"] {
+  height: 60px;
+  width: 150px;
+  border-radius: 20px;
+  padding: 10px 20px;
+  border: none;
+  color: #00adb5;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #f1f1f1;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.blog-form input[type="submit"]:hover {
+  background-color: #00adb5;
+  color: #fff;
+}
+
+.edit-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #393e46;
+  min-height: 100vh;
+}
+
+.edit-container {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: left;
+  border-radius: 15px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.edit-container h2 {
+  color: #00adb5;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.edit-container label {
+  color: #393e46;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.edit-container input[type="text"],
+.edit-container textarea,
+.edit-container select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.edit-save-button {
+  height: 50px;
+  width: 150px;
+  border-radius: 20px;
+  padding: 0; /* Reset padding to 0 to avoid interfering with centering */
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #00adb5;
+  margin-top: 20px;
+
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  text-align: center; /* Ensure text is centered */
+}
+
+.edit-save-button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Responsive styles (for screens less than 768px wide) */
+@media (max-width: 768px) {
+    .welcomeMessage {
+      margin: 20px 10px;
+      font-size: 1rem; /* Reduce font size */
+      text-align: center;
+    }
+  
+    .addBlog {
+      margin-top: 20px; /* Reduce margin */
+      font-size: 1.3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .add-button {
+      width: 120px;
+      height: 50px;
+      font-size: 1.2rem;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .welcome {
+      grid-template-columns: 1fr; /* Stack welcoming message and Inspire Us vertically */
+      text-align: center;
+    }
+  
+    .blog-container {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      padding: 10px;
+    }
+  
+    .blog-card {
+      width: 100%;
+      padding: 15px;
+      font-size: 1rem;
+    }
+  
+    .current {
+      font-size: 1.8rem;
+    }
   }
   
-  .edit-container {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: left;
-    border-radius: 15px;
-    max-width: 600px;
-    width: 100%;
+  /* Responsive styles (for screens less than 480px wide) */
+  @media (max-width: 480px) {
+    .welcomeMessage {
+      margin: 10px 5px;
+      font-size: 0.9rem; /* Further reduce font size */
+      text-align: center;
+    }
+  
+    .addBlog {
+      margin-top: 15px; /* Reduce margin further */
+      font-size: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .add-button {
+      width: 100px;
+      height: 40px;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+  
+    .welcome {
+      grid-template-columns: 1fr; /* Ensure it's stacked vertically */
+      text-align: center;
+    }
+  
+    .blog-container {
+      padding: 5px;
+      gap: 10px;
+    }
+  
+    .blog-card {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  
+    .current {
+      font-size: 1.4rem;
+    }
   }
-  
-  .edit-container h2 {
-    color: #00adb5;
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .edit-container label {
-    color: #393e46;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .edit-container input[type="text"],
-  .edit-container textarea,
-  .edit-container select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-  }
-  
-  .edit-save-button {
-    height: 50px;
-    width: 150px;
-    border-radius: 20px;
-    padding: 0; /* Reset padding to 0 to avoid interfering with centering */
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: bold;
-    background-color: #00adb5;
-    margin-top: 20px;
-    
-    display: flex; /* Use flexbox for centering */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    text-align: center; /* Ensure text is centered */
-  }
-  
-  .edit-save-button:hover {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  
-  
   
