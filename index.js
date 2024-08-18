@@ -10,7 +10,7 @@ import Blog from "./blog.js";
 
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Connect to MongoDB
 console.log("MongoDB URI:", process.env.MONGODB_URI);
