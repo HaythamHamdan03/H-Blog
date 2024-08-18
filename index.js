@@ -1,35 +1,29 @@
 import dotenv from "dotenv";
 dotenv.config();
 
+console.log("MongoDB URI:", process.env.MONGODB_URI);
+
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 
 import Blog from "./blog.js";
 
-
 const app = express();
 const port = 3000;
 
-// Connect to MongoDB
-console.log("MongoDB URI:", process.env.MONGODB_URI);
-
-mongoose
-  .connect(process.env.MONGODB_URI)
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((err) => {
-    console.error("Error connecting to MongoDB:", err.message);
-  });
-
-app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.get("/", async (req, res) => {
-  const blogs = await Blog.find();
-  res.render("index.ejs", { blogs: blogs });
-});
+if (!process.env.MONGODB_URI) {
+  console.error("MONGODB_URI is not defined in the environment variables.");
+} else {
+  mongoose
+    .connect(process.env.MONGODB_URI)
+    .then(() => {
+      console.log("Connected to MongoDB");
+    })
+    .catch((err) => {
+      console.error("Error connecting to MongoDB:", err.message);
+    });
+}
 
 app.post("/submit", (req, res) => {
   res.render("blog.ejs");
@@ -68,7 +62,6 @@ app.post("/save-blog", async (req, res) => {
   });
   res.redirect("/");
 });
-
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
