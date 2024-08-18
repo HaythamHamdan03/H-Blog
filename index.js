@@ -1,29 +1,42 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-console.log("MongoDB URI:", process.env.MONGODB_URI);
-
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
-
 import Blog from "./blog.js";
 
 const app = express();
 const port = 3000;
 
+console.log("MongoDB URI:", process.env.MONGODB_URI); // This will help in debugging
+
 if (!process.env.MONGODB_URI) {
-  console.error("MONGODB_URI is not defined in the environment variables.");
-} else {
-  mongoose
-    .connect(process.env.MONGODB_URI)
-    .then(() => {
-      console.log("Connected to MongoDB");
-    })
-    .catch((err) => {
-      console.error("Error connecting to MongoDB:", err.message);
-    });
+  console.error("MONGODB_URI is not defined in environment variables.");
+  process.exit(1);
 }
+
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.error("Error connecting to MongoDB:", err.message);
+  });
+
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.set("view engine", "ejs");
+
+app.get("/", async (req, res) => {
+  const blogs = await Blog.find();
+  res.render("index.ejs", { blogs: blogs });
+});
+
+app.get("/env", (req, res) => {
+  res.send(`MongoDB URI: ${process.env.MONGODB_URI}`);
+});
 
 app.post("/submit", (req, res) => {
   res.render("blog.ejs");
@@ -41,7 +54,7 @@ app.post("/submit-blog", async (req, res) => {
 });
 
 app.post("/delete-blog", async (req, res) => {
-  const blogId = req.body.id; // Use the blog's ID for deletion
+  const blogId = req.body.id;
   await Blog.findByIdAndDelete(blogId);
   res.redirect("/");
 });
