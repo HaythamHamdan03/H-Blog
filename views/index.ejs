@@ -3,7 +3,7 @@
 <body>
   <section class="welcome">
     <div class="welcomeMessage">
-      <h1 class="welcomeM">
+      <h1>
         Welcome to the corner of the web where your words
         <span class="matter">MATTER! </span> <br />
         Dive in, share your thoughts, or get lost in someone else's. <br />
@@ -34,21 +34,13 @@
         <div class="edit-delete-buttons">
           <!-- Edit Blog Form -->
           <form action="/edit-blog" method="POST">
-            <input
-              type="hidden"
-              name="index"
-              value="<%= blogs.indexOf(blog) %>"
-            />
+            <input type="hidden" name="id" value="<%= blog._id %>" />
             <button type="submit" class="edit-button">Edit</button>
           </form>
 
           <!-- Delete Blog Form -->
           <form action="/delete-blog" method="POST">
-            <input
-              type="hidden"
-              name="index"
-              value="<%= blogs.indexOf(blog) %>"
-            />
+            <input type="hidden" name="id" value="<%= blog._id %>" />
             <button type="submit" class="delete-button">Delete</button>
           </form>
         </div>
