@@ -7,8 +7,10 @@ import mongoose from "mongoose";
 
 import Blog from "./blog.js";
 
+
+
 const app = express();
-const port = process.env.PORT || 10000; // Use 10000 if PORT is not set
+const port = 3000;
 
 // Connect to MongoDB
 console.log("MongoDB URI:", process.env.MONGODB_URI);
@@ -67,6 +69,7 @@ app.post("/save-blog", async (req, res) => {
   });
   res.redirect("/");
 });
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
